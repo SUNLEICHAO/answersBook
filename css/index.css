@@ -24,13 +24,12 @@ body {
 .show-subtitle {
   margin-top: 20px;
   margin-bottom: 20px;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .show-content {
   position: relative;
   cursor: pointer;
-  /* height: 600px; */
 }
 
 .show-cover,
@@ -55,6 +54,7 @@ body {
   height: 400px;
   background-color: rgb(223, 219, 229);
   border-radius: 10px;
+  font-size: 20px;
 }
 
 .show-again {
