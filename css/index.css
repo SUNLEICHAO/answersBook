@@ -3,8 +3,56 @@
 }
 
 body {
-  background-color: #eee;
   font-family: "zantrokeregular", serif;
+  color: #fff;
+  background-color: #000;
+  /* animation: changeBackgroundColor 10s infinite; */
+}
+
+.disappear {
+  animation: fadeOut 2s 1;
+  animation-fill-mode: forwards;
+}
+
+.show-intro .finish {
+  /* animation-play-state: paused; */
+  animation-duration: 0s;
+  opacity: 1;
+}
+
+@keyframes changeBackgroundColor {
+  0% {
+    background-color: #000;
+  }
+
+  50% {
+    background-color: #4B0082;
+  }
+
+  100% {
+    background-color: #000;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    display: none;
+  }
 }
 
 .page-body {
@@ -15,16 +63,99 @@ body {
   margin: 0 auto;
 }
 
-.show-title,
-.show-subtitle {
+.show-intro_title {
   text-align: center;
-  font-weight: 300;
+  color: #bbae7c;
+  font-size: 40px;
+  font-weight: 600;
 }
 
-.show-subtitle {
+.show-intro_title {
+  font-size: 80px;
+  color: #0000;
+  background:
+    repeating-radial-gradient(#000 0 0.0001%, #fff 0 0.0002%) 50% 0/2500px 2500px,
+    repeating-conic-gradient(#000 0 0.0001%, #fff 0 0.0002%) 50% 50%/2500px 2500px;
+  background-blend-mode: difference;
+  mix-blend-mode: lighten;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.show-intro_subtitle {
   margin-top: 20px;
   margin-bottom: 20px;
-  font-size: 16px;
+  font-size: 24px;
+  font-weight: 200;
+  text-align: center;
+  color: #bbae7c;
+  color: #fff;
+}
+
+.show-intro__desc {
+  width: 800px;
+  margin: 0 auto;
+  color: #ccc;
+  color: #bbae7c;
+}
+
+.show-intro__desc-title {
+  font-size: 22px;
+  /* opacity: 0; */
+  animation: fadeIn 10s;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+}
+
+.show-intro__desc-item {
+  margin-top: 20px;
+  font-size: 20px;
+  opacity: 0;
+  animation: fadeIn 4s;
+  animation-fill-mode: forwards;
+}
+
+.show-intro__desc-item:nth-child(1) {
+  animation-delay: 6s;
+}
+
+.show-intro__desc-item:nth-child(2) {
+  animation-delay: 8s;
+}
+
+.show-intro__desc-item:nth-child(3) {
+  animation-delay: 10s;
+}
+
+.show-intro__desc-item:nth-child(4) {
+  animation-delay: 12s;
+}
+
+.show-intro__desc-item:nth-child(5) {
+  animation-delay: 14s;
+}
+
+
+.show-intro__open {
+  margin: 60px auto 0;
+  width: 200px;
+  padding: 20px;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 3px;
+  background-color: #4B0082;
+  opacity: .8;
+  border-radius: 20px;
+  cursor: pointer;
+  opacity: 0;
+  animation: fadeIn 10s;
+  animation-delay: 8s;
+  animation-fill-mode: forwards;
+}
+
+/* 结果的呈现 */
+.show-result {
+  display: none;
 }
 
 .show-content {
@@ -32,33 +163,28 @@ body {
   cursor: pointer;
 }
 
-.show-cover,
 .show-text {
   display: none;
 }
 
-.show-cover.active {
-  display: block;
-  width: 400px;
-  height: 460px;
-  margin: 0 auto;
-  background: url(../img/cover.jpg) center/400px;
-}
-
 .show-text.active {
-  margin: 0 auto;
   align-items: center;
   justify-content: center;
   display: flex;
   width: 600px;
   height: 400px;
-  background-color: rgb(223, 219, 229);
+  margin: 0 auto;
+  font-size: 30px;
+  font-weight: 700;
+  color: #fff;
+  /* background-color: #efedf5; */
+  /* border: 2px solid #4B0082; */
+  background-color: rgb(22, 19, 41);
   border-radius: 10px;
-  font-size: 20px;
 }
 
 .show-again {
-  display: none;
+  /* display: none; */
   width: 100px;
   padding: 10px;
   font-size: 16px;
@@ -74,7 +200,3 @@ body {
 .show-again:hover {
   opacity: .9;
 }
-
-/* .show-again.active {
-  display: block;
-} */
